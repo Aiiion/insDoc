@@ -1,13 +1,13 @@
 module.exports = app => {
     const users = require('../controllers/user.controller.js');
-
+    const middlewares = require("../middlewares");
     var router = require('express').Router();
 
     // Create a new
     router.post("/", users.create);
 
     // Retrieve all
-    router.get("/", users.findAll);
+    router.get("/", middlewares.authJwt.verifyToken, users.findAll);
 
     // Retrieve all published
     router.get("/published", users.findAllPublished);

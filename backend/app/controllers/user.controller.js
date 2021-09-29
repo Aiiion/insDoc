@@ -1,35 +1,10 @@
 const db = require("../models");
+
 const User = db.user;
 
 // Create and Save a new user
 exports.create = (req, res) => {
-    if (!req.body.username) {
-        res.status(400).send({ message:'Username can not be empty'});
-        return;
-        }
-    if (!req.body.password) {
-      res.status(400).send({ message:'Password can not be empty'});
-      return;
-    }
-
-    //create user
-    const user = new User({
-        username: req.body.username,
-        password: req.body.password,
-        admin: req.body.admin ? req.body.admin: false
-    });
     
-    //save user
-    user
-        .save(user)
-        .then(data => {
-            res.send(data);
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "error occured when creating user"
-            });
-        });
 };
 
 // Retrieve all users from the database.

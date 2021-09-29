@@ -4,9 +4,7 @@ module.exports = mongoose => {
       mongoose.Schema(
         {
           username: {type: String, required: true, unique: true},
-          password: {type: String, required: true}, //does not allow same as other user, this is not good
-          // username: String,
-          // password: String,
+          password: {type: String, required: true}, 
           admin: Boolean
         },
         { timestamps: true }
