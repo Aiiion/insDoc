@@ -123,7 +123,48 @@ exports.getDocFinished = async(req, res) => {
         res.status(500).send({
             message: err.message || "error getting sectionTitle"
         });
-    });
-     
+    }); 
 
+}
+
+exports.deleteDocTemplate = async(req, res) => {
+    const id = req.params;
+
+    await DocTemplate.findOneAndDelete(id)
+    .then(res.status(200).send({
+        message: 'Template deleted along with related finished docs'
+    }))
+    .catch(err => {
+        res.status(500).send({
+            message: err.message || "error deleting template"
+        });
+    });
+}
+
+exports.getAllDocTemplates= async(req, res) => {
+    const user_id = req.params;
+
+    await DocTemplate.find(user_id)
+    .then(data => {
+        res.status(200).send(data)
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: err.message || "error getting templates"
+        });
+    });
+}
+
+exports.deleteDocFinished = async(req, res) => {
+    const id = req.params;
+
+    await DocFinished.findOneAndDelete(id)
+    .then(res.status(200).send({
+        message: 'Finished Doc deleted'
+    }))
+    .catch(err => {
+        res.status(500).send({
+            message: err.message || "error deleting template"
+        });
+    });
 }
