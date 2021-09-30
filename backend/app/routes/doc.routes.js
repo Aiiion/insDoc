@@ -10,40 +10,51 @@ module.exports = function(app) {
         next();
     });
 
-    app.post( //is working 28sept
+    app.post( // CREATE A docTemplate
         "/api/doc/createTemplate",
         middlewares.authJwt.verifyToken,
         controller.createTemplate
     );
 
-    app.post(
+    app.post( // CREATE MANY sectionTitles
         "/api/doc/createTitles",
         controller.createSectionTitles
     );
 
-    app.get(
+    app.get( // GET MANY sectionTitles
         "/api/doc/getTitles/:template_id",
         controller.getSectionTitles
         
     );
 
-    app.get(
+    app.get( // GET MANY docFinished
         "/api/doc/finishedDocs/:user_id",
         controller.getAllDocFinished
     )
 
-    app.post(
+    app.post( //CREATE A docFinished
         "/api/doc/createDocFinished",
         controller.createDocFinished
     )
 
-    app.get(
+    app.get( //GET A docFinished
         "/api/doc/getDocFinished/:docFinished_id",
         controller.getDocFinished
     )
 
-    app.post(
+    app.get( //GET MANY docTemplates
+        "/api/doc/docTemplates/:user:id",
+        controller.getAllDocTemplates
+    )
+
+    app.post( //CREATE A sectionBody
         "/api/doc/createSectionBody",
         controller.createSectionBody
     )
+    
+    app.delete(  //DELETE A docTemplate
+        "/api/doc/deleteTemplate/:docTemplate_id",
+        controller.deleteDocTemplate
+    )
+
 }
