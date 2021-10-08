@@ -1,3 +1,52 @@
-body{
-  background-color: rgb(231, 212, 177);
+
+
+.body{
+  align-content:space-around;
+  font-style: oblique;
+  justify-content:center;
 }
+
+.header{
+  color: antiquewhite;
+  background-color: rgb(84, 133, 189);
+  padding: 0.5rem;
+  display:flex;
+  border-bottom: 2px solid black;
+}
+
+.headerLink{
+  text-decoration: none;
+  color:black;
+  font-size: larger;
+}
+
+.login{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.insDoc{
+  align-self: center;
+  margin-left:1.5rem;
+}
+
+.join {
+  display: flex;
+  justify-content: center;
+  margin-left: 10vw;
+}
+
+@media screen and (max-width: 900px) {
+  .join {
+    display: flex;
+    justify-content: right;
+    margin-right: 50vw;
+  }
+}
+

@@ -12,7 +12,7 @@ module.exports = function(app) {
 
     app.post( // CREATE A docTemplate
         "/api/doc/createTemplate",
-        middlewares.authJwt.verifyToken,
+        // middlewares.authJwt.verifyToken,
         controller.createTemplate
     );
 
@@ -43,7 +43,7 @@ module.exports = function(app) {
     )
 
     app.get( //GET MANY docTemplates
-        "/api/doc/docTemplates/:user:id",
+        "/api/doc/docTemplates/:user_id",
         controller.getAllDocTemplates
     )
 
