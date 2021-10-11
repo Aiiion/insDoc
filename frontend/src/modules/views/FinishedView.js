@@ -20,7 +20,7 @@ function FinishedView({ user }){
     }, [])
     return(
         <div className="body">
-        <h1 className="textCenter">Finishedview</h1>
+        <h1 className="textCenter">Finished insDocs</h1>
         <FinishedIcon templates={finishedDocs} />
         </div>
         

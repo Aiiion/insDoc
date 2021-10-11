@@ -8,10 +8,12 @@
 
 .header{
   color: antiquewhite;
-  background-color: rgb(84, 133, 189);
-  padding: 0.5rem;
+  background-color: rgb(103, 158, 221);
+  padding-top: 1rem;
+  padding-bottom: 0,8rem;;
   display:flex;
   border-bottom: 2px solid black;
+  
 }
 
 .headerLink{
@@ -42,6 +44,32 @@
   margin-left: 10vw;
 }
 
+.new{
+  border-radius: 15px;
+  margin-top:40px;
+  border: 1px solid black;
+  padding:0.7rem;
+  background-color: rgb(122, 161, 206);
+  box-shadow: 2px 2px 2px rgb(75, 74, 74);
+}
+.new:hover{
+  background-color: rgb(132, 171, 216);
+  box-shadow: 2px 1px 1px rgb(75, 74, 74);
+  color:rgb(195, 195, 195);
+}
+.finished{
+  border-radius: 15px;
+  margin-top:40px;
+  border: 1px solid black;
+  padding:0.7rem;
+  background-color: rgb(122, 161, 206);
+  box-shadow: 0px 2px 2px 0px rgb(75, 74, 74);
+}
+.finished:hover{
+  background-color: rgb(132, 171, 216);
+  color:rgb(195, 195, 195);
+  box-shadow: 0px 1px 2px 0px rgb(75, 74, 74);
+}
 @media screen and (max-width: 900px) {
   .join {
     display: flex;

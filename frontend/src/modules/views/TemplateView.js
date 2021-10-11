@@ -23,7 +23,7 @@ function TemplateView({ user }){
 
     return(
         <div className="body">
-            <h1 className="textCenter mt-3">Templateview</h1>
+            <h1 className="textCenter mt-3">Your insDocs</h1>
             <br/>
             <TemplateIcon templates={templates} />
         </div>

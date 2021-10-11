@@ -5,6 +5,7 @@ const SectionTitle = db.sectionTitle;
 const SectionBody = db.sectionBody;
 const DocFinished = db.docFinished;
 var jwt = require('jsonwebtoken');
+const { sectionTitle } = require('../models');
 
 exports.createTemplate = (req, res) => {
     const template = new DocTemplate({
@@ -24,7 +25,7 @@ exports.createTemplate = (req, res) => {
         });
 }
 
-exports.createSectionTitles = (req, res) => {
+exports.createSectionTitles = (req, res) => { //has problems, making requests throws error but saves data
     const template = req.body.template_id;
     let resData = []; 
     
@@ -47,6 +48,26 @@ exports.createSectionTitles = (req, res) => {
         
     });
     res.send(resData);
+}
+exports.createSectionTitle = (req, res) => {
+    const template_id = req.body.template_id;
+    console.log(req.body.body)
+    const sectionTitle = new SectionTitle({
+        template_id: template_id,
+        body: req.body.body
+    });
+
+    sectionTitle.save(sectionTitle)
+    .then(data => {
+        res.status(200).send(data)
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: err.message || "error saving sectionTitle"
+        });
+    });
+    
+    
 }
 
 exports.getSectionTitles = async(req, res) => { 

@@ -21,6 +21,11 @@ module.exports = function(app) {
         controller.createSectionTitles
     );
 
+    app.post( // CREATE A sectionTitles
+        "/api/doc/createTitle",
+        controller.createSectionTitle
+    );
+
     app.get( // GET MANY sectionTitles
         "/api/doc/getTitles/:template_id",
         controller.getSectionTitles

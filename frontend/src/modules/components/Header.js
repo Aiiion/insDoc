@@ -5,16 +5,16 @@ import insDoc from './insDoc.png';
 
 function Header() {
     return(
-    <Nav className="justify-content-around header" activeKey="/">
+    <Nav className="justify-content-evenly header" activeKey="/">
         
         <Nav.Item>
-            <Link className="headerLink" to="/Templates">
-                <b>Templates</b>
+            <Link className="headerLink finished" to="/Finished">
+                <b>Finished</b>
             </Link>
         </Nav.Item>
 
         <Nav.Item>
-            <Link className="headerLink justify-content-center" to="/">
+            <Link className="headerLink justify-content-center" to="/Templates">
                 <img src={insDoc} 
                 className="pl-1 insDoc" width="75%" height="75%"
                 />
@@ -23,8 +23,8 @@ function Header() {
 
 
         <Nav.Item>
-            <Link className="headerLink" to="/Finished">
-                <b>Finished</b>
+            <Link className="headerLink new" to="/createTemplate">
+                <b>new</b>
             </Link>
         </Nav.Item>
     </Nav>

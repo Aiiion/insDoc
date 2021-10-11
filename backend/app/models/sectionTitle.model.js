@@ -7,7 +7,7 @@ module.exports = mongoose => {
         {
           template_id: {type: Schema.Types.ObjectId, ref: 'DocTemplate', required: true},
           body: {type: String, required: true},
-          position: {type: Number, required: true}
+          position: {type: Number}
         },
         { timestamps: true }
       )
