@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import { Redirect } from "react-router";
 
 async function createDocFinished(reqData) {
-  // console.log(reqData);
+
   return fetch("http://localhost:8080/api/doc/createDocFinished", {
     method: "POST",
     headers: {
@@ -40,7 +40,7 @@ function UseTemplateView() {
   const { thisTemplate } = useTemplate();
   const [body, setBody] = useState("");
   const [sectionTitles, setSectionTitles] = useState([]);
-
+  const [submitted, setSubmitted] = useState(false);
   const user_id = thisTemplate.user_id;
 
   useEffect(() => {
@@ -60,11 +60,12 @@ function UseTemplateView() {
         docFinished_id: data._id,
       })
     );
-    
-    <Redirect to="/" /> //dosent work :(
-    
+    setSubmitted(true);
   };
 
+  if (submitted) {
+    return <Redirect to="/" />;
+  }
   return (
     <div className="login">
       <h1 className="mt-2 col-12 textCenter">{thisTemplate.body}</h1>

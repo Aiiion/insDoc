@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import TemplateIcon from "../components/TemplateIcon";
+import Form from "react-bootstrap/Form";
 
 async function getTemplates(user_id) {
   console.log("getting Templates " + user_id);
@@ -14,6 +15,7 @@ async function getTemplates(user_id) {
 
 function TemplateView({ user }) {
   const [templates, setTemplates] = useState([]);
+  const [searchParams, setSearchParams] = useState("");
 
   useEffect(() => {
     getTemplates(user.id).then((data) => setTemplates(data));
@@ -21,8 +23,18 @@ function TemplateView({ user }) {
 
   return (
     <div className="body">
+      <Form className="mt-3">
+      <Form.Control
+            autoFocus
+            placeholder="search here..."
+            type="searchParams"
+            value={searchParams}
+            onChange={(e) => setSearchParams(e.target.value)}
+          />
+      </Form>
       <h1 className="textCenter mt-3">Your insDocs</h1>
-      <br />
+      <hr />
+      
 
       <TemplateIcon templates={templates} />
     </div>

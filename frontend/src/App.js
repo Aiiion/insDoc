@@ -33,12 +33,10 @@ function App() {
       </BrowserRouter>
     );
   }
-  if (user.admin == true){
-    return(
-    <AdminView />
-    )
+  if (user.admin == true) {
+    return <AdminView />;
   }
-  console.log(user)
+  console.log(user);
   return (
     <BrowserRouter>
       <Header />
@@ -60,7 +58,7 @@ function App() {
             <Route path="/CustomiseTemplate">
               <CustomiseTemplateView />
             </Route>
-            
+
             <Route path="/UseTemplate">
               <UseTemplateView />
             </Route>
@@ -68,7 +66,6 @@ function App() {
             <Route path="/">
               <HomeView user={user} />
             </Route>
-
           </Switch>
         </Container>
       </TemplateDataProvider>
