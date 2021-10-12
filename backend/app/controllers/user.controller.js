@@ -13,31 +13,43 @@ exports.findAll = (req, res) => {
     else res.send(data);
   })
   .catch((err) => {
-    res.status(500).send({ message: "error retrieving user where id=" + id });
+    res.status(500).send({ message: "error retrieving users" });
   });
 //   res.json({ message: "Hello World! this is find all" });
 };
 
 // Find a single Tutorial with an id
 exports.findOne = (req, res) => {
-  const id = req.params.id;
-
-  User.findById(id)
-    .then((data) => {
-      if (!data)
-        res.status(404).send({ message: "Could not find user where id=" + id });
-      else res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({ message: "error retrieving user where id=" + id });
-    });
+  
+  const user = req.body.user;
+  return res.status(200).send(user);
 };
 
 // Update a Tutorial by the id in the request
 exports.update = (req, res) => {};
 
 // Delete a Tutorial with the specified id in the request
-exports.delete = (req, res) => {};
+exports.delete = async(req, res) => {
+  
+  try{
+    const user = req.body.user;
+    await user.delete()
+    res.status(201).send({message: "deleted user succesfully:)"})
+  }
+  catch{
+    res.status(400).send({message: "no bueno, bad request"})
+  }
+  // console.log(_id)
+  //   await User.findOneAndDelete(_id)
+  //   .then(res.status(200).send({
+  //       message: 'User deleted'
+  //   }))
+  //   .catch(err => {
+  //       res.status(500).send({
+  //           message: err.message || "error deleting User"
+  //       });
+  //   });
+};
 
 // Delete all Tutorials from the database.
 exports.deleteAll = (req, res) => {};

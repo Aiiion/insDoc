@@ -1,7 +1,11 @@
+const findUserByParams = require('../middlewares/set.js');
+
 module.exports = app => {
     const users = require('../controllers/user.controller.js');
     const middlewares = require("../middlewares");
     var router = require('express').Router();
+    router.use("/:id", findUserByParams)
+
 
     // Create a new
     router.post("/", users.create);
@@ -12,7 +16,7 @@ module.exports = app => {
     users.findAll);
 
     // Retrieve all published
-    router.get("/published", users.findAllPublished);
+    // router.get("/published", users.findAllPublished);
 
     // Retrieve a single with id
     router.get("/:id", users.findOne);
