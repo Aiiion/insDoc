@@ -22,6 +22,9 @@
   font-size: larger;
 }
 
+.icon{
+  max-width: 200px !important;;
+}
 .login{
   display:flex;
   justify-content: center;

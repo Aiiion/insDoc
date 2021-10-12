@@ -7,7 +7,9 @@ module.exports = app => {
     router.post("/", users.create);
 
     // Retrieve all
-    router.get("/", middlewares.authJwt.verifyToken, users.findAll);
+    router.get("/", 
+    // middlewares.authJwt.verifyToken, 
+    users.findAll);
 
     // Retrieve all published
     router.get("/published", users.findAllPublished);

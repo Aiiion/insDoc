@@ -30,7 +30,6 @@ function CreateTemplateView({ user }) {
     console.log(template);
     const create = await createTemplate(
       {
-        // need to be reWritten
         user_id,
         template,
       },

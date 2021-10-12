@@ -14,6 +14,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import CreateTemplateView from "./modules/views/CreateTemplateView";
+import AdminView from "./modules/views/AdminView";
 
 function App() {
   const [user, setUser] = useState();
@@ -32,7 +33,12 @@ function App() {
       </BrowserRouter>
     );
   }
-
+  if (user.admin == true){
+    return(
+    <AdminView />
+    )
+  }
+  console.log(user)
   return (
     <BrowserRouter>
       <Header />
@@ -54,17 +60,15 @@ function App() {
             <Route path="/CustomiseTemplate">
               <CustomiseTemplateView />
             </Route>
+            
+            <Route path="/UseTemplate">
+              <UseTemplateView />
+            </Route>
 
             <Route path="/">
               <HomeView user={user} />
             </Route>
 
-            {/* <Route path ="/useTempalte">
-            <UseTemplateView />
-          </Route> */}
-            {/* <Route path="/Login">
-            <Login/>
-          </Route> */}
           </Switch>
         </Container>
       </TemplateDataProvider>

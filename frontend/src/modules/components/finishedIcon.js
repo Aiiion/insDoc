@@ -9,7 +9,7 @@ function FinishedIcon({templates}) {
     <div className="row justify-content-around">
         {templates.map && templates.map((template, index) => {
             return (
-                <Card className="justify-content-center col-5" key={index}>
+                <Card className="justify-content-center col-6 icon" key={index}>
                     <Card.Img variant="top" src={papen} height="100px" />
                     <Card.Body>
                         <Card.Title className="textCenter">{template.updatedAt}</Card.Title>

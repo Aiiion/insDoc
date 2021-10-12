@@ -15,7 +15,6 @@ async function saveSectionTitle(reqData) {
     body: JSON.stringify(reqData),
   })
     .then((data) => data.json())
-    .then((data) => alert(data));
 }
 
 function CustomiseTemplateView() {

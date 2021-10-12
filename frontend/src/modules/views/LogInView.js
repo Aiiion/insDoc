@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import insDoc from '../components/insDoc.png';
+import { Redirect } from "react-router";
 
 async function logInUser(credentials) {
   console.log("login started")
@@ -29,12 +30,11 @@ function LogInView({ setUser}) {
         password
       });
       setUser(token);
-      
+      <Redirect to="/" />//funkar inte, varför?
     }
 
     return(
         <div className="login">
-            {/* <h1 className="mt-4 col-12 textCenter">insDoc</h1> */}
             <div className="col-12 mt-4 d-flex justify-content-around">
               <img src={insDoc} className=""/>
             </div>
