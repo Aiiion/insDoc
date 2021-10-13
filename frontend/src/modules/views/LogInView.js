@@ -8,7 +8,7 @@ import { Redirect } from "react-router";
 
 async function logInUser(credentials) {
   console.log("login started")
-  return fetch('http://localhost:8080/api/auth/signin', {
+  return fetch('https://insdoc.herokuapp.com/api/auth/signin', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

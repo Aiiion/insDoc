@@ -6,7 +6,7 @@ import { Redirect } from "react-router";
 
 async function createDocFinished(reqData) {
 
-  return fetch("http://localhost:8080/api/doc/createDocFinished", {
+  return fetch("https://insdoc.herokuapp.com/api/doc/createDocFinished", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,7 +17,7 @@ async function createDocFinished(reqData) {
 
 async function createSectionBody(reqData) {
   console.log(reqData);
-  return fetch("http://localhost:8080/api/doc/createSectionBody", {
+  return fetch("https://insdoc.herokuapp.com/api/doc/createSectionBody", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -28,7 +28,7 @@ async function createSectionBody(reqData) {
 
 async function getSectionTitles(template_id) {
   console.log("getting seciontitles " + template_id);
-  return fetch(`http://localhost:8080/api/doc/getTitles/${template_id}`, {
+  return fetch(`https://insdoc.herokuapp.com/api/doc/getTitles/${template_id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

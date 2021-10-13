@@ -8,7 +8,7 @@ function AdminView() {
 
   const deleteUser = async (user_id) => {
     console.log(user_id);
-    const response = await fetch(`http://localhost:8080/api/users/${user_id}`, {
+    const response = await fetch(`https://insdoc.herokuapp.com/api/users/${user_id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -19,7 +19,7 @@ function AdminView() {
   };
   const getUsers = async () => {
     console.log("fetch started");
-    const response = await fetch("http://localhost:8080/api/users/");
+    const response = await fetch("https://insdoc.herokuapp.com/api/users/");
 
     const data = await response.json();
     setUsers(data);

@@ -7,7 +7,7 @@ import FinishedIcon from '../components/finishedIcon';
 function HomeView(user){
   async function getTemplates(user_id) {
     console.log("getting Templates " + user_id)
-    return fetch(`http://localhost:8080/api/doc/docTemplates/${user_id}`, {
+    return fetch(`https://insdoc.herokuapp.com/api/doc/docTemplates/${user_id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ function HomeView(user){
 
   async function getFinishedDocs(user_id) {
     console.log("getting docs " + user_id)
-    return fetch(`http://localhost:8080/api/doc/finishedDocs/${user_id}`, {
+    return fetch(`https://insdoc.herokuapp.com/api/doc/finishedDocs/${user_id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

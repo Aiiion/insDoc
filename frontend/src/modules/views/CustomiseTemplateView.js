@@ -7,7 +7,7 @@ import { Redirect } from "react-router";
 async function saveSectionTitle(reqData) {
   console.log("save started");
   console.log(reqData);
-  return fetch("http://localhost:8080/api/doc/createTitle", {
+  return fetch("https://insdoc.herokuapp.com/api/doc/createTitle", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

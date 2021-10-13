@@ -3,7 +3,7 @@ import FinishedIcon from '../components/finishedIcon';
 
 async function getFinishedDocs(user_id) {
     console.log("getting docs " + user_id)
-    return fetch(`http://localhost:8080/api/doc/finishedDocs/${user_id}`, {
+    return fetch(`https://insdoc.herokuapp.com/api/doc/finishedDocs/${user_id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'

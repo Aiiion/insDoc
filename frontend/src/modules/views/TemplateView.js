@@ -12,7 +12,7 @@ function TemplateView({ user }) {
   const getTemplates = async (user_id) => {
     console.log("getting Templates " + user_id);
     const response = await fetch(
-      `http://localhost:8080/api/doc/docTemplates/${user_id}`
+      `https://insdoc.herokuapp.com/api/doc/docTemplates/${user_id}`
     );
 
     const data = await response.json();
