@@ -1,4 +1,5 @@
-const config = process.env || require("../config/auth.config");
+const config = process.env;
+//  || require("../config/auth.config");
 const db = require("../models");
 const User = db.user;
 
