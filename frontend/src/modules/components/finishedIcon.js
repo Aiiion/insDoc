@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import papen from "../components/papen.png";
 
 function FinishedIcon({ templates }) {
@@ -15,13 +15,13 @@ function FinishedIcon({ templates }) {
                 <Card.Title className="textCenter">
                   {template.updatedAt}
                 </Card.Title>
-                <Button
-                  variant="primary"
-                  className="col-12"
-                  href="/useTemplate"
+                <Link
+                  className="btn btn-primary col-12 mt-2"
+                  onClick={() => attachTemplate(template)}
+                  to="ViewFinished"
                 >
                   View
-                </Button>
+                </Link>
               </Card.Body>
             </Card>
           );

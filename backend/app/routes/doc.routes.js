@@ -21,7 +21,7 @@ module.exports = function(app) {
         controller.createSectionTitles
     );
 
-    app.post( // CREATE A sectionTitles
+    app.post( // CREATE A sectionTitle
         "/api/doc/createTitle",
         controller.createSectionTitle
     );

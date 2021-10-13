@@ -7,7 +7,7 @@ import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
 
 async function signUpUser(credentials) {
-  //need to be reWritten
+  
   console.log("signup started");
   return fetch("https://insdoc.herokuapp.com/api/auth/signup", {
     method: "POST",
@@ -32,7 +32,6 @@ function SignUpView() {
       return alert("Passwords does not match");
     }
     const create = await signUpUser({
-      // need to be reWritten
       username,
       password,
     });
