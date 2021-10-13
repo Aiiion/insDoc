@@ -66,7 +66,7 @@ function LogInView({ setUser}) {
             </Form>
 
             <p className="textCenter col-12 mt-3">Don't have an account?</p>
-            <a href="/SignUp"><b>Sign up here!</b></a>
+            <Link to="/SignUp"><b>Sign up here!</b></Link>
         </div>
     );
 }
