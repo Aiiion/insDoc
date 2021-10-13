@@ -2,7 +2,11 @@
   "name": "backend",
   "version": "10.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "16.x",
+    "npm": "7.21.0"
+},
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
