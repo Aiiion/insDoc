@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTemplate } from "../providers/TemplateDataProvider";
-
-import { Redirect } from "react-router";
+import { Link } from "react-router-dom";
 
 function DocFinishedView({ user }) {
   const { thisTemplate } = useTemplate();

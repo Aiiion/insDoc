@@ -2,8 +2,11 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import papen from "../components/papen.png";
+import { useTemplate } from "../providers/TemplateDataProvider";
 
 function FinishedIcon({ templates }) {
+  const { attachTemplate } = useTemplate();
+
   return (
     <div className="row justify-content-around">
       {templates.map &&
