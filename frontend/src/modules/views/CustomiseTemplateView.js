@@ -13,8 +13,7 @@ async function saveSectionTitle(reqData) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(reqData),
-  })
-    .then((data) => data.json())
+  }).then((data) => data.json());
 }
 
 function CustomiseTemplateView() {

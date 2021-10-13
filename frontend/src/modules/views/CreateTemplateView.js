@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Redirect } from "react-router";
-
 import { useTemplate } from "../providers/TemplateDataProvider";
 
 async function createTemplate(credentials, attachTemplate) {
-  //need to be reWritten
   console.log("creating template");
   return fetch("https://insdoc.herokuapp.com/api/doc/createTemplate", {
     method: "POST",

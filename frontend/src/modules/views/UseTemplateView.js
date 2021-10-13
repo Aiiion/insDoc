@@ -5,7 +5,6 @@ import Button from "react-bootstrap/Button";
 import { Redirect } from "react-router";
 
 async function createDocFinished(reqData) {
-
   return fetch("https://insdoc.herokuapp.com/api/doc/createDocFinished", {
     method: "POST",
     headers: {
@@ -28,12 +27,15 @@ async function createSectionBody(reqData) {
 
 async function getSectionTitles(template_id) {
   console.log("getting seciontitles " + template_id);
-  return fetch(`https://insdoc.herokuapp.com/api/doc/getTitles/${template_id}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((data) => data.json());
+  return fetch(
+    `https://insdoc.herokuapp.com/api/doc/getTitles/${template_id}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  ).then((data) => data.json());
 }
 
 function UseTemplateView() {

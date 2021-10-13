@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import papen from "../components/papen.png";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTemplate } from "../providers/TemplateDataProvider";
 
 function TemplateIcon({ templates }) {
@@ -21,7 +20,6 @@ function TemplateIcon({ templates }) {
                   className="btn btn-primary col-12 mt-2"
                   onClick={() => attachTemplate(template)}
                   to="/UseTemplate"
-                  
                 >
                   <b>Use</b>
                 </Link>
