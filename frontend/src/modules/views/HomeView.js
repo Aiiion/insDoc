@@ -4,15 +4,17 @@ import PropTypes from 'prop-types';
 import TemplateIcon from '../components/TemplateIcon';
 import FinishedIcon from '../components/finishedIcon';
 
-async function getTemplates(user_id) {
+function HomeView(user){
+  async function getTemplates(user_id) {
     console.log("getting Templates " + user_id)
     return fetch(`http://localhost:8080/api/doc/docTemplates/${user_id}`, {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }
     })
     .then(data => data.json())
+    
   }
 
   async function getFinishedDocs(user_id) {
@@ -25,9 +27,6 @@ async function getTemplates(user_id) {
     })
     .then(data => data.json())
   }
-
-function HomeView(user){
-    
     const [templates, setTemplates] = useState([]); 
     const [finishedDocs, setFinishedDocs] = useState([]);
     
@@ -41,7 +40,6 @@ function HomeView(user){
         .then(data => setFinishedDocs(data))
     }, [])
 
-    console.log(templates)
     return(
         <div className="body">
 

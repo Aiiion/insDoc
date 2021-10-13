@@ -49,6 +49,7 @@ module.exports = function(app) {
 
     app.get( //GET MANY docTemplates
         "/api/doc/docTemplates/:user_id",
+        // middlewares.authJwt.verifyToken,
         controller.getAllDocTemplates
     )
 
