@@ -7,25 +7,20 @@ function DocFinishedView({ user }) {
   const [title, setTitle] = useState([]);
   const [body, setBody] = useState([]);
   const [template, setTemplate] = useState();
-  // const user_id = user.id;
-  // console.log(user)
+
   const getTemplate = async () => {
-    console.log(thisTemplate)
     const response = await fetch(`https://insdoc.herokuapp.com/api/doc/getTemplate/${thisTemplate.template_id}`);
     const data = await response.json();
     setTemplate(data);
     console.log(template)
-    // return template;
   };
-  
-  const getTitles = async (prevResponse) => { 
+  const getTitles = async () => { 
     console.log(template)
     const response = await fetch(`https://insdoc.herokuapp.com/api/doc/getTitles/${thisTemplate.template_id}`);
     const data = await response.json();
     setTitle(data);
-    // return title;
   };
-  const getBodys = async (prevResponse) => {
+  const getBodys = async () => {
     const response = await fetch(`https://insdoc.herokuapp.com/api/doc/getSectionBody/${thisTemplate._id}`);
     const data = await response.json();
     setBody(data);
@@ -35,7 +30,7 @@ function DocFinishedView({ user }) {
     .then(getTitles)
     .then(getBodys)
   }, []);
-  console.log(template)
+  console.log(body)
   return (
     <div className="login">
       <h1 className="textCenter col-12">{template?.title}</h1>
