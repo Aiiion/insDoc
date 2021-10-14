@@ -10,17 +10,22 @@ function DocFinishedView({ user }) {
   // const user_id = user.id;
   // console.log(user)
   const getTemplate = async () => {
-    const response = await fetch(`https://insdoc.herokuapp.com/api/doc/getTemplate/${user.id}`);
+    console.log(thisTemplate)
+    const response = await fetch(`https://insdoc.herokuapp.com/api/doc/getTemplate/${thisTemplate.template_id}`);
     const data = await response.json();
     setTemplate(data);
+    console.log(template)
+    // return template;
   };
   
-  const getTitles = async () => { 
-    const response = await fetch(`https://insdoc.herokuapp.com/api/getTitles/${template._id}`);
+  const getTitles = async (prevResponse) => { 
+    console.log(template)
+    const response = await fetch(`https://insdoc.herokuapp.com/api/doc/getTitles/${thisTemplate.template_id}`);
     const data = await response.json();
     setTitle(data);
+    // return title;
   };
-  const getBodys = async () => {
+  const getBodys = async (prevResponse) => {
     const response = await fetch(`https://insdoc.herokuapp.com/api/doc/getSectionBody/${thisTemplate._id}`);
     const data = await response.json();
     setBody(data);

@@ -53,6 +53,11 @@ module.exports = function(app) {
         controller.getDocFinished
     )
 
+    app.get( //GET A sectionBody
+        "/api/doc/getSectionBody/:template_id",
+        controller.getSectionBody
+    )
+
     app.get( //GET MANY docTemplates
         "/api/doc/docTemplates/:user_id",
         // middlewares.authJwt.verifyToken,
