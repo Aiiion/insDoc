@@ -118,7 +118,19 @@ exports.createSectionBody = (req, res) => {
         });
     });
 }
+exports.getDocTemplate= async(req, res) => {
+    const id = req.params;
 
+    await DocTemplate.find(id)
+    .then(data => {
+        res.status(200).send(data)
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: err.message || "error getting template"
+        })
+    })
+}
 exports.getAllDocFinished = async(req, res) => {
     const user_id = req.params;
 

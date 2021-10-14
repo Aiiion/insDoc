@@ -16,6 +16,12 @@ module.exports = function(app) {
         controller.createTemplate
     );
 
+    app.get( // GET A docTemplate
+        "/api/doc/getTemplate",
+        // middlewares.authJwt.verifyToken,
+        controller.getDocTemplate
+    );
+
     app.post( // CREATE MANY sectionTitles, throws error
         "/api/doc/createTitles",
         controller.createSectionTitles

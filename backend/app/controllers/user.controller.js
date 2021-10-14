@@ -18,14 +18,14 @@ exports.findAll = (req, res) => {
 //   res.json({ message: "Hello World! this is find all" });
 };
 
-// Find a single Tutorial with an id
+// Find a single User with an id
 exports.findOne = (req, res) => {
   
   const user = req.body.user;
   return res.status(200).send(user);
 };
 
-// Update a Tutorial by the id in the request
+// Update a User by the id in the request
 exports.update = async(req, res) => {
   
   try{
@@ -45,7 +45,7 @@ exports.update = async(req, res) => {
   }
 };
 
-// Delete a Tutorial with the specified id in the request
+// Delete a User with the specified id in the request
 exports.delete = async(req, res) => {
   
   try{

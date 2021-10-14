@@ -80,7 +80,7 @@ function AdminView() {
                   >
                     Delete
                   </Button>
-                  <Button
+                  <Button //borde va en funktion som returnerar olika knappar baserat på admin
                     className="btn btn-secondary"
                     onClick={() => updateUser(user._id)}
                   >
