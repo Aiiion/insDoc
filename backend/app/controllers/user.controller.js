@@ -37,7 +37,7 @@ exports.update = async(req, res) => {
       user.admin = true;
     }
     
-    await user.update()
+    await user.update(user)
     res.status(201).send({message: "user updated successfully"})
   }
   catch{
