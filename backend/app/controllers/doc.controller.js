@@ -117,9 +117,9 @@ exports.createSectionBody = (req, res) => {
   });
 };
 exports.getSectionBody = async (req, res) => {
-    const template_id = req.params;
+    const docFinished_id = req.params.id;
   
-    await SectionBody.find(template_id)
+    await SectionBody.find(docFinished_id)
       .then((data) => {
         res.status(200).send(data);
       })

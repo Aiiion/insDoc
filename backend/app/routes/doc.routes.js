@@ -54,7 +54,7 @@ module.exports = function(app) {
     )
 
     app.get( //GET A sectionBody
-        "/api/doc/getSectionBody/:template_id",
+        "/api/doc/getSectionBody/:docFinished_id",
         controller.getSectionBody
     )
 
