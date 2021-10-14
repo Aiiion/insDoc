@@ -26,7 +26,22 @@ exports.findOne = (req, res) => {
 };
 
 // Update a Tutorial by the id in the request
-exports.update = (req, res) => {};
+exports.update = async(req, res) => {
+  
+  try{
+    if(req.body.user.admin) {
+      req.body.user.admin = false;
+    } else {
+      req.body.user.admin = true;
+    }
+    const user = req.body.user;
+    await user.update()
+    res.status(201).send({message: "user updated successfully"})
+  }
+  catch{
+    res.status(400).send({message: "no bueno, bad request"})
+  }
+};
 
 // Delete a Tutorial with the specified id in the request
 exports.delete = async(req, res) => {
@@ -39,16 +54,7 @@ exports.delete = async(req, res) => {
   catch{
     res.status(400).send({message: "no bueno, bad request"})
   }
-  // console.log(_id)
-  //   await User.findOneAndDelete(_id)
-  //   .then(res.status(200).send({
-  //       message: 'User deleted'
-  //   }))
-  //   .catch(err => {
-  //       res.status(500).send({
-  //           message: err.message || "error deleting User"
-  //       });
-  //   });
+ 
 };
 
 // Delete all Tutorials from the database.

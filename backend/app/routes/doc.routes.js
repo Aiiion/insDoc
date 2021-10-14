@@ -16,7 +16,7 @@ module.exports = function(app) {
         controller.createTemplate
     );
 
-    app.post( // CREATE MANY sectionTitles
+    app.post( // CREATE MANY sectionTitles, throws error
         "/api/doc/createTitles",
         controller.createSectionTitles
     );

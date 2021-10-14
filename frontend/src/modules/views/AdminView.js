@@ -20,6 +20,20 @@ function AdminView() {
     const data = await response.json();
     getUsers();
   };
+  const updateUser = async (user_id) => {
+    console.log(user_id);
+    const response = await fetch(
+      `https://insdoc.herokuapp.com/api/users/${user_id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+    getUsers();
+  };
   const getUsers = async () => {
     console.log("fetch started");
     const response = await fetch("https://insdoc.herokuapp.com/api/users/");
@@ -50,6 +64,10 @@ function AdminView() {
         {users.length > 0 &&
           users.map((user, index) => {
             const { username, admin } = user;
+            let adminSwitch = "make admin";
+            if(admin){
+              adminSwitch = "make user"
+            }
             return (
               <Card className="mb-2">
                 <li class="row textCenter m-2" key={`li-item-${index}`}>
@@ -61,6 +79,12 @@ function AdminView() {
                     onClick={() => deleteUser(user._id)}
                   >
                     Delete
+                  </Button>
+                  <Button
+                    className="btn btn-danger"
+                    onClick={() => updateUser(user._id)}
+                  >
+                    {adminSwitch}
                   </Button>
                 </li>
               </Card>
