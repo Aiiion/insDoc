@@ -29,12 +29,14 @@ exports.findOne = (req, res) => {
 exports.update = async(req, res) => {
   
   try{
-    if(req.body.user.admin) {
-      req.body.user.admin = false;
-    } else {
-      req.body.user.admin = true;
-    }
     const user = req.body.user;
+    
+    if(user.admin) {
+      user.admin = false;
+    } else {
+      user.admin = true;
+    }
+    
     await user.update()
     res.status(201).send({message: "user updated successfully"})
   }

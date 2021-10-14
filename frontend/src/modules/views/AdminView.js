@@ -81,7 +81,7 @@ function AdminView() {
                     Delete
                   </Button>
                   <Button
-                    className="btn btn-danger"
+                    className="btn btn-secondary"
                     onClick={() => updateUser(user._id)}
                   >
                     {adminSwitch}
