@@ -1,44 +1,41 @@
-
-
-.body{
-  align-content:space-around;
+.body {
+  align-content: space-around;
   font-style: oblique;
-  justify-content:center;
+  justify-content: center;
 }
 
-.header{
+.header {
   color: antiquewhite;
   background-color: rgb(103, 158, 221);
   padding-top: 1rem;
-  padding-bottom: 0,8rem;;
-  display:flex;
+  padding-bottom: 0, 8rem;
+  display: flex;
   border-bottom: 2px solid black;
-  
 }
 
-.headerLink{
+.headerLink {
   text-decoration: none;
-  color:black;
+  color: black;
   font-size: larger;
 }
 
-.icon{
-  max-width: 200px !important;;
+.icon {
+  max-width: 200px !important;
 }
-.login{
-  display:flex;
+.login {
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
+  margin-top:1rem;
 }
 
 .textCenter {
   text-align: center;
 }
 
-.insDoc{
+.insDoc {
   align-self: center;
-  margin-left:1.5rem;
+  margin-left: 1.5rem;
 }
 
 .join {
@@ -47,30 +44,30 @@
   margin-left: 10vw;
 }
 
-.new{
+.new {
   border-radius: 15px;
-  margin-top:40px;
+  margin-top: 40px;
   border: 1px solid black;
-  padding:0.7rem;
+  padding: 0.7rem;
   background-color: rgb(122, 161, 206);
   box-shadow: 2px 2px 2px rgb(75, 74, 74);
 }
-.new:hover{
+.new:hover {
   background-color: rgb(132, 171, 216);
   box-shadow: 2px 1px 1px rgb(75, 74, 74);
-  color:rgb(195, 195, 195);
+  color: rgb(195, 195, 195);
 }
-.finished{
+.finished {
   border-radius: 15px;
-  margin-top:40px;
+  margin-top: 40px;
   border: 1px solid black;
-  padding:0.7rem;
+  padding: 0.7rem;
   background-color: rgb(122, 161, 206);
   box-shadow: 0px 2px 2px 0px rgb(75, 74, 74);
 }
-.finished:hover{
+.finished:hover {
   background-color: rgb(132, 171, 216);
-  color:rgb(195, 195, 195);
+  color: rgb(195, 195, 195);
   box-shadow: 0px 1px 2px 0px rgb(75, 74, 74);
 }
 @media screen and (max-width: 900px) {
@@ -80,4 +77,3 @@
     margin-right: 50vw;
   }
 }
-

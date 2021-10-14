@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTemplate } from "../providers/TemplateDataProvider";
 import { Link } from "react-router-dom";
+import Card from "react-bootstrap/Card";
 
 function DocFinishedView({ user }) {
   const { thisTemplate } = useTemplate();
@@ -33,11 +34,15 @@ function DocFinishedView({ user }) {
   console.log(body)
   return (
     <div className="login">
-      <h1 className="textCenter col-12">{template?.title}</h1>
-      <p className="textCenter col-12"><b>{title[0]?.body}</b></p>
-      <p className="textCenter col-12">{body[0]?.body}</p>
-      <hr />
-      <Link to="/Finished" className="btn btn-secondary col-12">Back</Link>
+      <h1 className="textCenter col-12"><b>{template?.title}</b></h1>
+      <hr/>
+      
+      <h3 className="textCenter col-12">{title[0]?.body}</h3>
+      <hr/>
+      <Card className="col-12 mt-2">
+      <p className="textCenter col-12 mt-1">{body[0]?.body}</p>
+      </Card>
+      <Link to="/Finished" className="btn btn-secondary col-12 mt-3">Back</Link>
     </div>
   );
 }
