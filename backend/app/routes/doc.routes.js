@@ -17,7 +17,7 @@ module.exports = function(app) {
     );
 
     app.get( // GET A docTemplate
-        "/api/doc/getTemplate",
+        "/api/doc/getTemplate/:id",
         // middlewares.authJwt.verifyToken,
         controller.getDocTemplate
     );

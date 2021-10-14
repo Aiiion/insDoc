@@ -7,10 +7,10 @@ function DocFinishedView({ user }) {
   const [title, setTitle] = useState();
   const [body, setBody] = useState();
   const [template, setTemplate] = useState();
-
-  
+  // const user_id = user.id;
+  // console.log(user)
   const getTemplate = async () => {
-    const response = await fetch(`https://insdoc.herokuapp.com/api/doc/getTemplate/${user._id}`);
+    const response = await fetch(`https://insdoc.herokuapp.com/api/doc/getTemplate/${user.id}`);
     const data = await response.json();
     setTemplate(data);
   };
@@ -30,12 +30,12 @@ function DocFinishedView({ user }) {
     .then(getTitles)
     .then(getBodys)
   }, []);
-  
+
   return (
     <div className="login">
-      <h1 className="textCenter">{template.title}</h1>
-      <p className="textCenter"><b>{title[0].body}</b></p>
-      <p className="textCenter">{body[0].body}</p>
+      <h1 className="textCenter">{template?.title}</h1>
+      <p className="textCenter"><b>{title?.body}</b></p>
+      <p className="textCenter">{body?.body}</p>
       <hr />
       <Link to="/Finished" className="btn btn-secondary">Back</Link>
     </div>
