@@ -132,7 +132,7 @@ exports.getSectionBody = async (req, res) => {
 exports.getDocTemplate = async (req, res) => {
   const id = req.params;
 
-  await DocTemplate.find(id)
+  await DocTemplate.findById(id)
     .then((data) => {
       res.status(200).send(data);
     })
