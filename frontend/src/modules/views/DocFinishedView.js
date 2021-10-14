@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function DocFinishedView({ user }) {
   const { thisTemplate } = useTemplate();
-  const [title, setTitle] = useState();
-  const [body, setBody] = useState();
+  const [title, setTitle] = useState([]);
+  const [body, setBody] = useState([]);
   const [template, setTemplate] = useState();
   // const user_id = user.id;
   // console.log(user)
@@ -35,14 +35,14 @@ function DocFinishedView({ user }) {
     .then(getTitles)
     .then(getBodys)
   }, []);
-
+  console.log(template)
   return (
     <div className="login">
-      <h1 className="textCenter">{template?.title}</h1>
-      <p className="textCenter"><b>{title?.body}</b></p>
-      <p className="textCenter">{body?.body}</p>
+      <h1 className="textCenter col-12">{template?.title}</h1>
+      <p className="textCenter col-12"><b>{title[0]?.body}</b></p>
+      <p className="textCenter col-12">{body[0]?.body}</p>
       <hr />
-      <Link to="/Finished" className="btn btn-secondary">Back</Link>
+      <Link to="/Finished" className="btn btn-secondary col-12">Back</Link>
     </div>
   );
 }
